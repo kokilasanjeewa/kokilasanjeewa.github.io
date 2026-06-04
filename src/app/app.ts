@@ -9,4 +9,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('portfolio');
+  theme = 'dark';
+
+  toggleTheme() {
+    this.theme = this.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('dark');
+  }
 }
