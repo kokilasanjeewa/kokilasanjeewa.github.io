@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0000"/>
+      <stop offset="100%" style="stop-color:#0d0d0d"/>
+    </linearGradient>
+    <linearGradient id="kGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff1a1a"/>
+      <stop offset="100%" style="stop-color:#cc0000"/>
+    </linearGradient>
+    <linearGradient id="sGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff4444"/>
+      <stop offset="100%" style="stop-color:#e00000"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="0.6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background: rounded square -->
+  <rect width="32" height="32" rx="6" fill="url(#bgGrad)"/>
+
+  <!-- Red accent bar top-left -->
+  <rect x="0" y="0" width="4" height="32" rx="2" fill="#cc0000" opacity="0.5"/>
+
+  <!-- K letter -->
+  <g filter="url(#glow)">
+    <!-- K vertical stroke -->
+    <rect x="4" y="7" width="2.5" height="18" rx="1" fill="url(#kGrad)"/>
+    <!-- K top diagonal -->
+    <polygon points="6.5,16 14,7 16.5,7 9,16" fill="url(#kGrad)"/>
+    <!-- K bottom diagonal -->
+    <polygon points="6.5,16 16.5,25 14,25 7,17" fill="url(#kGrad)"/>
+  </g>
+
+  <!-- S letter -->
+  <g filter="url(#glow)">
+    <!-- S top arc -->
+    <path d="M19,10 Q19,7.5 22,7.5 Q25,7.5 25,10 Q25,13 22,13.5 Q19,14 19,17 Q19,19.5 22,19.5 Q25,19.5 25,17"
+          fill="none" stroke="url(#sGrad)" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- S bottom -->
+    <path d="M25,22 Q25,25 22,25 Q19,25 19,22"
+          fill="none" stroke="url(#sGrad)" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Subtle bottom glow -->
+  <rect x="4" y="29" width="24" height="2" rx="1" fill="#cc0000" opacity="0.4"/>
+</svg>
